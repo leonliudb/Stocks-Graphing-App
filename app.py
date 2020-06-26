@@ -11,3 +11,6 @@ print(StockPrices)
 
 
 
+StockPrices['Close'].plot(grid=True)
+
+plt.show()
