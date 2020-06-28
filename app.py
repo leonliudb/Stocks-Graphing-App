@@ -12,11 +12,10 @@ while True:
         sp = StockData.history()
         break
     except KeyError:
-        print("Please enter valid symbols")
+        print("Please enter at least two symbols")
     except ValueError:
-        print("Please input stock symbols")
+        print("Please input some stock symbols")
         
-
 
 
 #StockData = yf.Tickers(Symbol)
@@ -27,25 +26,29 @@ while True:
     startdate = input("Please enter the start date in this format '2001-1-1' : " )
     if not startdate:
         print("no input start date")
-    enddate = input("Please enter the end date in this format '2001-1-1' : " )
-    if not enddate:
-        print("no input end date")
-    try:
-        datetime.datetime.strptime(startdate, "%Y-%m-%d")
-        datetime.datetime.strptime(enddate, "%Y-%m-%d")
-    except ValueError:
-        print("Wrong format")
     else:
-        StockPrices = StockData.history(period='1d', start=startdate, end=enddate)
-        ClosePrices = StockPrices['Close']
-        if str(ClosePrices.isnull().values.any()) == "True":
-            print("Sorry, please enter a proper time range for the selected stock symbols")
-        elif not startdate:
-            print("no input start date")
-        elif not enddate:
-            print("no input end date")   
+        try:
+            datetime.datetime.strptime(startdate, "%Y-%m-%d")
+        except ValueError:
+            print("Incorrect start date format")
         else:
-            break
+            while True:
+                enddate = input("Please enter the end date in this format '2001-1-1' : " )
+                if not enddate:
+                    print("no input end date")
+                else:
+                    try:
+                        datetime.datetime.strptime(enddate, "%Y-%m-%d")
+                    except ValueError:
+                        print("Incorrect end date format")
+                    else:
+                        break
+            StockPrices = StockData.history(period='1d', start=startdate, end=enddate)
+            ClosePrices = StockPrices['Close']
+            if str(ClosePrices.isnull().values.any()) == "True":
+                print("Sorry, please enter a proper time range for the selected stock symbols") 
+            else:
+                break
 
 #StockPrices = StockData.history(period='1d', start='2010-1-1', end='2020-2-10')
 #StockPrices = StockData.history(period='1d', start=startdate, end=today)
