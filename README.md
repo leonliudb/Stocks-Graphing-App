@@ -1,5 +1,10 @@
 # Stock-Graphing-App
 
+This is a stocks' return and prices graphing application in Python.
+Uses Yahoo! Finance market data downloader(https://pypi.org/project/yfinance/) to retrive stock data and the rate of return over a certain user-defined time frame.
+
+
+
 ## Prerequisites
 
   + Anaconda 3.7
@@ -36,6 +41,11 @@ Run the recommendation script:
 ```py
 python app.py
 ```
+
+Example output:
+
+![example](/sample graphs/Stocks Historical Prices.png)
+
 
 ## [License](/LICENSE.md)
 

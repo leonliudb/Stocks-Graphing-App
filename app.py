@@ -57,8 +57,7 @@ while True:
             else:
                 break
 
-#StockPrices = StockData.history(period='1d', start='2010-1-1', end='2020-1-1')
-#StockPrices = StockData.history(period='1d', start=startdate, end=today)
+#StockPrices = StockData.history(period='1d', start='2010-01-01', end='2020-01-01')
 
 #print(type(StockPrices['Close'].head()))
 
