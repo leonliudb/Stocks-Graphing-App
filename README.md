@@ -6,8 +6,6 @@
   + Python 3.7
   + Pip
 
-
-
 ## Installation
 
 Clone or download [this repository](https://github.com/leonliudb/Stocks-Graphing-App) onto your computer. Then navigate there from the command line:
@@ -39,9 +37,7 @@ Run the recommendation script:
 python app.py
 ```
 
-
-
-
+## [License](/LICENSE.md)
 
 
 
