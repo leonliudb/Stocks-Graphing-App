@@ -1,7 +1,8 @@
 # Stock-Graphing-App
 
 This is a stocks' return and prices graphing application in Python.
-Uses Yahoo! Finance market data downloader(https://pypi.org/project/yfinance/) to retrive stock data and the rate of return over a certain user-defined time frame.
+
+Uses Yahoo! Finance market data downloader(https://pypi.org/project/yfinance/) to retrive stock data and compute the rate of return over a certain user-defined time frame.
 
 
 
@@ -28,7 +29,7 @@ conda create -n stocksgraph-env python=3.7 # (first time only)
 conda activate stocksgraph-env
 ```
 
-From within the virtual environment, install the required packages specified in the "requirements.txt" file you created:
+From within the virtual environment, install the required packages specified in the "requirements.txt" file:
 
 ```sh
 pip install -r requirements.txt
@@ -45,7 +46,7 @@ python app.py
 Example output:
 
 ![example](https://github.com/leonliudb/Stocks-Graphing-App/blob/master/sample%20graphs/Stocks%20Historical%20Prices.png)
-
+![example](https://github.com/leonliudb/Stocks-Graphing-App/blob/master/sample%20graphs/Stocks%20Return%20Comparison.png)
 
 ## [License](/LICENSE.md)
 
