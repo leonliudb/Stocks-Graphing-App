@@ -3,23 +3,19 @@ import matplotlib.pyplot as plt
 import datetime
 import pandas as pd
 
-
+print("-------------------------")
 #Symbol = 'SPY AMZN TSLA'
 while True:
-    selected_symbol = input("Please input two or more stock symbols, i.e. 'SPY AMZN TSLA' : " )
+    selected_symbol = input("Please input two or more stock symbols. Each symbol must be separated by one single space, e.g. 'SPY AMZN TSLA': " )
     try:
         StockData = yf.Tickers(selected_symbol)
-        sp = StockData.history()
+        sdh = StockData.history()
         break
     except KeyError:
-        print("Please enter at least two symbols")
+        print("Please enter at least two valid stock symbols")
     except ValueError:
         print("Please input some stock symbols")
         
-
-
-#StockData = yf.Tickers(Symbol)
-
 #today = datetime.datetime.today().isoformat()[:10]
 
 while True:
@@ -45,7 +41,7 @@ while True:
                         break
             StockPrices = StockData.history(period='1d', start=startdate, end=enddate)
             ClosePrices = StockPrices['Close']
-            if str(ClosePrices.isnull().values.any()) == "True":
+            if str(ClosePrices.isnull().values.any()) == "True":#check if there's any NaN value which means the stock price is not available at this time/date
                 print("Sorry, please enter a proper time range for the selected stock symbols") 
             else:
                 break
@@ -63,7 +59,14 @@ plt.title("Stocks Historical Prices(Daily)")
 
 
 stock_return = ClosePrices.apply(lambda x: x / x[0])
-#print(stock_return.head())
+#print(type(stock_return.tail(1)))
+last_return = stock_return.tail(1)
+#print(last_return.idxmax(axis = 1))
+#print(type(last_return.idxmax(axis = 1)))
+#print(last_return.idxmax(axis = 1).get)
+print(last_return.idxmax(axis = 1).values)
+
+
 
 stock_return.plot(grid = True).axhline(y = 1, color = "black", lw = 2)
 plt.title("Stocks Return Comparison")
@@ -71,3 +74,18 @@ plt.title("Stocks Return Comparison")
 
 #plt.show(block=False)
 #plt.show()
+
+
+
+###
+#  save plots
+#  create reports 
+
+#print("-----------------------")
+#print("TOP SELLING PRODUCTS:")
+#
+#rank = 1
+#for d in top_sellers:
+#    print("  " + str(rank) + ") " +
+#          d["name"] + ": " + to_usd(d["monthly_sales"]))
+#    rank = rank + 1
