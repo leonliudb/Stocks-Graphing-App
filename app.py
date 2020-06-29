@@ -2,6 +2,8 @@ import yfinance as yf
 import matplotlib.pyplot as plt
 import datetime
 import pandas as pd
+from yfinance import multi, shared
+
 
 print("-------------------------")
 #Symbol = 'SPY AMZN TSLA'
@@ -10,12 +12,19 @@ while True:
     try:
         StockData = yf.Tickers(selected_symbol)
         sdh = StockData.history()
-        break
-    except KeyError:
+        if shared._ERRORS:
+            print("Please check your spelling and try again")
+        else:
+            break
+    except (KeyError, AttributeError):
         print("Please enter at least two valid stock symbols")
     except ValueError:
         print("Please input some stock symbols")
-        
+    
+   
+    
+
+
 #today = datetime.datetime.today().isoformat()[:10]
 
 while True:
@@ -65,8 +74,12 @@ last_return = stock_return.tail(1)
 #print(type(last_return.idxmax(axis = 1)))
 #print(last_return.idxmax(axis = 1).values)
 print(last_return.T)
-ranking = last_return.T.rank(ascending = False)
-print(ranking[:-0])
+ranking = last_return.T.rank(ascending = False).astype(int)
+#print(ranking)
+print(ranking.to_string(header=False))
+#print(type(ranking.to_string(header=False))) #str
+
+#print(type(ranking))
 
 
 
