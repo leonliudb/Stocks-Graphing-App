@@ -44,7 +44,7 @@ python app.py
 
 Example output:
 
-![example](/sample graphs/Stocks Historical Prices.png)
+![example](https://github.com/leonliudb/Stocks-Graphing-App/blob/master/sample%20graphs/Stocks%20Historical%20Prices.png)
 
 
 ## [License](/LICENSE.md)
