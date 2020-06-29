@@ -46,7 +46,7 @@ while True:
             else:
                 break
 
-#StockPrices = StockData.history(period='1d', start='2010-1-1', end='2020-2-10')
+#StockPrices = StockData.history(period='1d', start='2010-1-1', end='2020-1-1')
 #StockPrices = StockData.history(period='1d', start=startdate, end=today)
 
 #print(type(StockPrices['Close'].head()))
@@ -63,8 +63,10 @@ stock_return = ClosePrices.apply(lambda x: x / x[0])
 last_return = stock_return.tail(1)
 #print(last_return.idxmax(axis = 1))
 #print(type(last_return.idxmax(axis = 1)))
-#print(last_return.idxmax(axis = 1).get)
-print(last_return.idxmax(axis = 1).values)
+#print(last_return.idxmax(axis = 1).values)
+print(last_return.T)
+ranking = last_return.T.rank(ascending = False)
+print(ranking[:-0])
 
 
 
