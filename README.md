@@ -48,6 +48,26 @@ Example output:
 ![example](https://github.com/leonliudb/Stocks-Graphing-App/blob/master/sample%20graphs/Stocks%20Historical%20Prices.png)
 ![example](https://github.com/leonliudb/Stocks-Graphing-App/blob/master/sample%20graphs/Stocks%20Return%20Comparison.png)
 
+-------------------------
+Output graphs saved to the 'graphs' folder in this directory
+-------------------------
+-------------------------
+Stock Returns Ranking Report
+
+Start Date:  2019-01-01
+End Date:  2020-01-01
+
+Stock Rank Rate of Return
+TSLA  1          34.89%
+SPY   2          31.09%
+AMZN  3          20.06%
+-------------------------
+-------------------------
+Thank you for using the stocks graphing app.
+-------------------------
+
+
+
 ## [License](/LICENSE.md)
 
 
