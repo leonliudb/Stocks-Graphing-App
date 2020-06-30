@@ -53,7 +53,7 @@ while True:
                         print("Incorrect end date format")                        
             StockPrices = StockData.history(period='1d', start=startdate, end=enddate)
             ClosePrices = StockPrices['Close']
-            if str(ClosePrices.isnull().values.any()) == "True":#check if there's any NaN value which means some stock prices are not available during this time
+            if str(ClosePrices.isnull().values.any()) == "True":#check if there's any NaN value which means the stock price is not available at this time/date
                 print("Sorry, please enter a proper time range for the selected stock symbols") 
             else:
                 break

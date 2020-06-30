@@ -1,4 +1,4 @@
-# Stock-Graphing-App
+# Stocks-Graphing-App
 
 This is a stocks' return and prices graphing application in Python.
 
