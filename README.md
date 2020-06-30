@@ -2,7 +2,7 @@
 
 This is a stocks' return and prices graphing application in Python.
 
-Uses Yahoo! Finance market data downloader(https://pypi.org/project/yfinance/) to retrive stock data and compute the rate of return over a certain user-defined time frame.
+Uses [Yahoo! Finance market data downloader](https://pypi.org/project/yfinance/) to retrive stock data and compute the rate of return over a certain user-defined time frame. The price point used here is the closing price.
 
 
 
@@ -42,7 +42,7 @@ Run the application script:
 ```py
 python app.py
 ```
-Example chart:
+Example charts:
 
 ![example](https://github.com/leonliudb/Stocks-Graphing-App/blob/master/sample%20graphs/Stocks%20Historical%20Prices.png)
 ![example](https://github.com/leonliudb/Stocks-Graphing-App/blob/master/sample%20graphs/Stocks%20Return%20Comparison.png)
