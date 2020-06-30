@@ -17,7 +17,7 @@ while True:
     selected_symbol = input("Please input two or more stock symbols. Each symbol must be separated by one single space, e.g. 'SPY AMZN TSLA': " )
     try:
         StockData = yf.Tickers(selected_symbol)
-        sdh = StockData.history()
+        sdh = StockData.history()#to test if the results are valid
         if shared._ERRORS:#if one or more symbol is misspelled
             print("Please check the spellings and try again")
         else:
